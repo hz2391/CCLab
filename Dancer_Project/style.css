@@ -6,7 +6,15 @@ canvas {
   display: block;
 }
 div {
-  display: block;
-  align-items: center;
-  justify-content: space-around;
+  div {
+    width: 300px;
+    height: 300px;
+  
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
+  
+    padding: 50px 100px 0px 50px;
+    margin: 50px 100px;
+  }
 }
