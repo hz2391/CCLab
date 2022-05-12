@@ -1,15 +1,18 @@
 let sel
 let c
+let img, img2, img3, img4, img5
 let NYim = [];
-let numofNYimages = 10
+let numofNYimages = 5
 let Seoulim = [];
-let numSeoulim = 11
+let numSeoulim = 5
 let RomeImages = [];
-let numofRome = 10
+let numofRome = 4
+
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
   background ("#BABDBF")
+
 
   for (let i=0; i<numofNYimages; i++){
     NYim[i] = loadImage("NY/" +i+ "NY.jpg")
@@ -41,9 +44,10 @@ function mySelectEvent() {
     c = color ("#BABDBF");
     fill (c);
 
+
     for (let i = 0; i < numofNYimages; i++){
       NYim[i].resize(width/7, height/3);
-      translate(220, 0);
+      translate(230, 50);
       image(NYim[i], windowWidth/100, windowHeight/8);
     }
 
@@ -53,7 +57,7 @@ function mySelectEvent() {
 
     for (let i = 0; i<numSeoulim; i++) {
       Seoulim[i].resize(width/7, height/3);
-      translate(220, 0);
+      translate(230, 50);
       image(Seoulim[i], windowWidth/100, windowHeight/8)
     }
   } else if (item == "Rome"){
@@ -62,7 +66,7 @@ function mySelectEvent() {
 
     for (let i=0; i<numofRome; i++){
       RomeImages[i].resize(width/5.5, height/4);
-      translate(275, 0);
+      translate(275, 50);
       image(RomeImages[i], windowWidth/100, windowHeight/8);
     }
   }
