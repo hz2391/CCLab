@@ -1,7 +1,7 @@
 let sel
 let c
 let mySound
-let img, img2
+let img, img2, img3
 let NYim = [];
 let numofNYimages = 5
 let Seoulim = [];
@@ -14,7 +14,11 @@ function preload(){
   // train icon 
   // <a target="_blank" href="https://icons8.com/icon/61959/maglev-vehicle">Maglev Vehicle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
   img = loadImage("assets/train.png");
+  // <a target="_blank" href="https://icons8.com/icon/104767/travel-signpost">Travel Signpost</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
   img2 = loadImage("assets/signpost.png");
+  // <a target="_blank" href="https://icons8.com/icon/9898/travel-visa">Travel Visa</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+  img3 = loadImage("assets/visa.png");
+
 }
 
 function setup(){
@@ -106,6 +110,8 @@ function draw() {
   image (img, windowWidth/2, 0.90 * windowHeight)
   image (img2, windowWidth/2.5, windowHeight/9)
   image (img2, windowWidth/2.5, 0.90 * windowHeight)
+  image (img3, windowWidth/1.5, windowHeight/10)
+  image (img3, windowWidth/1.5, 0.90 * windowHeight)
   translate (50, 0)
   pop();
 }
