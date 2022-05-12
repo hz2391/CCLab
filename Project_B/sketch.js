@@ -105,7 +105,7 @@ function draw() {
   image (img, windowWidth/2, windowHeight/10)
   image (img, windowWidth/2, 0.90 * windowHeight)
   image (img2, windowWidth/2.5, windowHeight/9)
-  image (img2, windowWidth/2.5, 0.80 * windowHeight)
+  image (img2, windowWidth/2.5, 0.90 * windowHeight)
   translate (50, 0)
   pop();
 }
