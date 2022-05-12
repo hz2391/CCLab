@@ -1,5 +1,6 @@
 let sel
 let c
+let mySound
 let img, img2, img3, img4, img5
 let NYim = [];
 let numofNYimages = 5
@@ -8,6 +9,9 @@ let numSeoulim = 5
 let RomeImages = [];
 let numofRome = 4
 
+function preload(){
+  mySound = loadSound ("assets/noise.mp3")
+}
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -43,7 +47,6 @@ function mySelectEvent() {
   if (item == "New York") {
     c = color ("#BABDBF");
     fill (c);
-
 
     for (let i = 0; i < numofNYimages; i++){
       NYim[i].resize(width/7, height/3);
