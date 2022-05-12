@@ -6,32 +6,25 @@ let Seoulim = [];
 let numSeoulim = 11
 let RomeImages = [];
 let numofRome = 10
-let img
-
-function preload(){
-  img = loadImage("assets/travel.jpg")
-}
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  background ("#F2E8C9")
-
-  c = color ("#F2E8C9")
+  background ("#BABDBF")
 
   for (let i=0; i<numofNYimages; i++){
-    NYim[i] = loadImage("NYimages/" +i+ "NY.jpg")
+    NYim[i] = loadImage("NY/" +i+ "NY.jpg")
   }
 
   for (let i = 0; i<numSeoulim; i++){
-    Seoulim[i] = loadImage("Seoul/" +i+ "S.jpg")
+    Seoulim[i] = loadImage("Seoul/" +i+ "Seoul.jpg")
   }
 
   for (let i=0; i<numofRome; i++){
-    RomeImages[i] = loadImage("RomeIm/" +i+ "Rome.jpg")
+    RomeImages[i] = loadImage("Rome/" +i+ "Rome.jpg")
   }
 
   sel = createSelect();
-  sel.position(windowWidth/3, 10);
+  sel.position(0, 10);
   sel.option ("Select City")
   sel.option("New York");
   sel.option("Seoul");
@@ -45,61 +38,62 @@ function mySelectEvent() {
   let item = sel.value();
 
   if (item == "New York") {
-    c = color ("#F2EDD0");
+    c = color ("#BABDBF");
     fill (c);
 
     for (let i = 0; i < numofNYimages; i++){
-      NYim[i].resize(width/4, height/3);
-      translate(random(-100, 5), random (100, -5));
-      rotate(random(-5))
-      image(NYim[i], windowWidth/2, height < windowHeight/4);
+      NYim[i].resize(width/7, height/3);
+      translate(220, 0);
+      image(NYim[i], windowWidth/100, windowHeight/8);
     }
 
   } else if (item == "Seoul"){
-    c = color ("#D9B29C")
+    c = color ("#BABDBF")
     fill (c)
 
     for (let i = 0; i<numSeoulim; i++) {
-      Seoulim[i].resize(width/4, height/3);
-      translate(random(-100, 5), random (100, -5));
-      rotate(random(5));
-      image(Seoulim[i], windowWidth/2, height < windowHeight/4)
+      Seoulim[i].resize(width/7, height/3);
+      translate(220, 0);
+      image(Seoulim[i], windowWidth/100, windowHeight/8)
     }
   } else if (item == "Rome"){
-    c = color ("#F2E8C9");
+    c = color ("#BABDBF");
     fill (c);
 
     for (let i=0; i<numofRome; i++){
-      RomeImages[i].resize(width/4, height/3);
-      translate(random(-100, 5), random (100, -5));
-      rotate(random(-5));
-      image(RomeImages[i], windowWidth/2, height < windowHeight/4);
+      RomeImages[i].resize(width/5.5, height/4);
+      translate(275, 0);
+      image(RomeImages[i], windowWidth/100, windowHeight/8);
     }
   }
   else {
-    c = color("#F2E8C9")
+    c = color("#BABDBF")
   }
 }
 
+function keyPressed(){
+  clear();
+  background ("#BABDBF")
+  noStroke();
+  fill (0);
+  textFont ("Playfair Display");
+  textSize (20);
+  text ("Canvas is cleared. You can select another city in the upper left hand corner.", windowWidth/3, windowHeight/2); 
+  pop();
+}
+
 function draw() {
-  fill ("#401201")
-  rect(0, 0, windowWidth/3, windowHeight);
-  
-  
+  fill ("#732B1A")
+  rect(0, 0, windowWidth, windowHeight/10);
+
+  push();
   noStroke();
   fill(255);
-  textFont ("Shadows Into Light");
+  textFont ("Shadows Into Light")
   textSize (40);
-  text ("NEXT STOP...", 50, 100);
-  fill (0);
-  
-  textFont ("Playfair Display")
-  fill (255)
-  textSize (30);
-  text ("Select a location", 50, 175)
-  text ("to see various photos", 50, 225);
-  text ("of the city.", 50, 275);
-  image (img, 0, 325, 475, 320)
+  text ("CITIES OF THE WORLD", windowWidth/2.5, windowHeight/15);
+  fill (255);
+  pop();
 }
 
 function windowResized() {
