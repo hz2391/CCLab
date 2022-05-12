@@ -1,7 +1,7 @@
 let sel
 let c
 let mySound
-let img, img2, img3, img4, img5
+let img, img2
 let NYim = [];
 let numofNYimages = 5
 let Seoulim = [];
@@ -11,6 +11,10 @@ let numofRome = 4
 
 function preload(){
   mySound = loadSound ("assets/noise.mp3")
+  // train icon 
+  // <a target="_blank" href="https://icons8.com/icon/61959/maglev-vehicle">Maglev Vehicle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+  img = loadImage("assets/train.png");
+  img2 = loadImage("assets/signpost.png");
 }
 
 function setup(){
@@ -81,11 +85,6 @@ function mySelectEvent() {
 function keyPressed(){
   clear();
   background ("#BABDBF")
-  noStroke();
-  fill (0);
-  textFont ("Playfair Display");
-  textSize (20);
-  text ("Canvas is cleared. You can select another city in the upper left hand corner.", windowWidth/3, windowHeight/2); 
   pop();
 }
 
@@ -100,6 +99,14 @@ function draw() {
   textSize (40);
   text ("CITIES OF THE WORLD", windowWidth/2.5, windowHeight/15);
   fill (255);
+  pop();
+
+  push()
+  image (img, windowWidth/2, windowHeight/10)
+  image (img, windowWidth/2, 0.90 * windowHeight)
+  image (img2, windowWidth/2.5, windowHeight/9)
+  image (img2, windowWidth/2.5, 0.80 * windowHeight)
+  translate (50, 0)
   pop();
 }
 
