@@ -8,6 +8,8 @@ let Seoulim = [];
 let numSeoulim = 5
 let RomeImages = [];
 let numofRome = 4
+let ParisImages = []
+let numofParis = 4
 
 function preload(){
   mySound = loadSound ("assets/noise.mp3")
@@ -38,12 +40,17 @@ function setup(){
     RomeImages[i] = loadImage("Rome/" +i+ "Rome.jpg")
   }
 
+  for (let i=0; i<numofParis; i++){
+    ParisImages[i] = loadImage("Paris/" +i+ "Paris.jpg")
+  }
+
   sel = createSelect();
   sel.position(0, 10);
   sel.option ("Select City")
   sel.option("New York");
   sel.option("Seoul");
   sel.option("Rome");
+  sel.option("Paris");
   sel.selected ("Select City");
 
   sel.changed (mySelectEvent);
@@ -80,8 +87,16 @@ function mySelectEvent() {
       translate(275, 50);
       image(RomeImages[i], windowWidth/100, windowHeight/8);
     }
-  }
-  else {
+  } else if (item == "Paris"){
+    c = color ("#BABDBF");
+    fill (c);
+
+    for (let i=0; i<numofParis; i++){
+     ParisImages[i].resize(width/7, height/3);
+      translate(230, 50);
+      image(ParisImages[i], windowWidth/100, windowHeight/8);
+    }
+   } else {
     c = color("#BABDBF")
   }
 }
